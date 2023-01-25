@@ -22,7 +22,7 @@ buscador.addEventListener("submit", (e) => {
                peliInfo.classList.add("cajaPelicula");
                peliInfo.innerHTML =`<div class="coverPeli"><img src="${peli.Poster}" alt=""class = " imagen">
                </div>
-               <div class ="descripcionPeli"><p>año de lanzamiento : ${peli.Year}</p><p>es una ${peli.Type}</p><a href="/MovieApp/MovieApp/pages/movies.html?title=${peli.imdbID}"><button>Ver Mas</button></a><button class = "añadir">añadir a favoritos</button></div>
+               <div class ="descripcionPeli"><p>año de lanzamiento : ${peli.Year}</p><p>es una ${peli.Type}</p><a href="../MovieApp/pages/movies.html?title=${peli.imdbID}"><button>Ver Mas</button></a></div>
                <div class = "nombrePeli"><p>${peli.Title}</p>
                </div>`
                document.querySelector('#container').append(peliInfo)
@@ -35,7 +35,19 @@ buscador.addEventListener("submit", (e) => {
                     console.log(info)
                     console.log(response.Search.find((peli)=> peli.Title === info ))
                     array.push(response.Search.find((peli)=> peli.Title === info ))
-                    console.log(array)
+                    
+                    
+                })
+            })
+           
+        })
+
+})
+const contador = document.querySelector(".contador>p")
+        contador.innerText = JSON.parse(localStorage.getItem("favoritos")).length
+
+/* CODIGO DE ANTES */
+/* console.log(array)
                     localStorage.setItem("favoritos",JSON.stringify(array))
                     let losFav = JSON.parse(localStorage.getItem("favoritos",(array)))
                     console.log(losFav)
@@ -48,16 +60,10 @@ buscador.addEventListener("submit", (e) => {
                         }
                       }, []);
                     localStorage.setItem("arrayNoDuplicado",JSON.stringify(uniqueArray))
-                    
-                })
-            })
-           
-        })
-
-})
+<button class = "añadir">añadir a favoritos</button>
 const añade = JSON.parse(localStorage.getItem("arrayNoDuplicado",(uniqueArray)))
 const contador = document.querySelector(".contador>p")
-    contador.innerHTML =`${añade.length}`
+    contador.innerHTML =`${añade.length}` */
 
 
 
