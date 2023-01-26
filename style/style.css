@@ -3,19 +3,22 @@
     padding: 0;
 }
 .mainContain{
-    width: 100%;
+    min-width: 100%;
     min-height: 100vh;
     max-height: auto;
     display: grid;
     grid-template-columns: 15% 85%;
     grid-template-rows:5vh 40vh auto;
+    position: relative;
 }
 .buscador{
+    box-sizing: content-box;
     grid-column: 2/2;
     grid-row: 0/1;
     display: flex;
     justify-content: space-between;
-    padding-right: 5px;
+    padding-right: 0px;
+    margin-bottom: 10px;
 }
 form{
     box-sizing: border-box;
@@ -104,8 +107,33 @@ input::placeholder{
     grid-row: 1/4;
 }
 .galeria{
-    grid-column: 2/3;
+    grid-column: 2/2;
     grid-row: 2/2;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.galeria .deslizador{
+    display: flex;
+    animation: scroll 20s linear infinite;
+    -webkit-animation: scroll 30s linear infinite ;
+    width: calc(200px *29);
+}
+.galeria .slide{
+    width: 200px;
+}
+.galeria .slide img{
+    width: 200px;
+    height: 300px;
+}
+@keyframes scroll{
+    0%{
+        -webkit-transform: translateX(0);
+        transform:translateX(0);
+    }
+    100%{
+        -webkit-transform: translateX(calc(-200px *6));
+        transform:translateX(calc(-200px *6));
+    }
 }
 #container{
     height: auto;
@@ -120,4 +148,40 @@ input::placeholder{
     height: 200px;
     width: 100px;
     border-radius: 5px
+}
+.loading-page{
+    position: absolute;
+    top:0;
+    left: 0;
+    background: linear-gradient(to right,#020024,#090979,#00d4ff);
+    width: 100%;
+    height: 100% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#Icons{
+    width: 100px;
+    height: 100px;
+    stroke: #ffff;
+    fill-opacity: 0;
+    stroke-width: 0.2px;
+    stroke-dasharray:4500 ;
+    animation: draw 35s ease;
+}
+@keyframes draw {
+    0%{
+        stroke-dashoffset: 4500;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+.nombre-logo{
+    color: #fff;
+    letter-spacing: 12px;
+    font-family: sans-serif;
+    font-size: 20px;
 }

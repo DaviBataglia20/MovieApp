@@ -1,3 +1,13 @@
+/* ANIMACION DE ENTRADA */
+gsap.fromTo(
+    '.loading-page',
+    {opacity:1},
+    {
+    opacity:0,
+    duration:3,
+    delay:1,
+    }
+);
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
@@ -21,7 +31,7 @@ const db = getFirestore(app)
 let i = 0;
 let placeholder = "";
 const txt = "Escriba una pelicula que te guste";
-const speed = 30;
+const speed = 100;
 function type() {
     placeholder += txt.charAt(i);
     document.getElementById("peliculaBusqueda").setAttribute("placeholder", placeholder);
@@ -30,6 +40,7 @@ function type() {
 }
 type();
 /* ANIMACION DEL PLACEHOLDER */
+setInterval(function () {document.querySelector(".loading-page").style.position = "relative"}, 3900);
 const LaFuncion = (e) => {
     e.preventDefault();
     document.querySelector('#container').innerHTML = ``

@@ -38,12 +38,10 @@ peli.then(data => data.json())
 
         const boton = document.querySelector(".añadir")
         const docRef = doc(db, "favoritos", "user1");
-        const array = await getDoc(docRef).then(res => res.data()) || [];
+        const docSnap = await getDoc(docRef).then(res => res );
+        const array = docSnap.data().array || []
 
-
-        //const array = docSnap.array || []
-
-        //console.log(response);
+        console.log(response);
 
         boton.addEventListener("click", async () => {
             if (!array.find(e => e.imdbID == response.imdbID)) {
