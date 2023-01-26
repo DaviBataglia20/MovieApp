@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="estiloDetalle">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,29 @@
     <title>Document</title>
     <link rel="stylesheet" href="../MovieApp/style/style.css">
 </head>
-<body>
-    <div>
-        <form action="submit">
-            <label for="name">¿Que pelicula quieres ver?</label>
-            <input type="search" name="peli" id="peliculaBusqueda" value="">
-            <button id="buscar" type="submit">Buscar</button>
-        </form>
-    </div>
-    <div class ="contador">
-        <i class="fa-regular fa-heart"></i>
-        <p>0</p>
-    </div>
-    <div id="container">
-        
-    </div>
 
+<body>
+    <div class="mainContain">
+        <div class="buscador">
+            <form action=""">
+                <input  name=" peli" id="peliculaBusqueda" placeholder="busque un a pelicula">
+                </input>
+                <i type="submit" id="iconoBuscar" class="fa-solid fa-magnifying-glass"></i>
+            </form>
+            <div class="textoFav">
+                <a href="/MovieApp/pages/favourites.html"><p>ver los favoritos</p></a>
+            </div>
+            <div class="iconoFavo">
+                <a href="/MovieApp/pages/favourites.html"><i class="fa-regular fa-heart"></i></a>
+                <a href="/MovieApp/pages/favourites.html"><p>0</p></a>
+            </div>
+        </div>
+        <div class="contador">a</div>
+        <div class="galeria">a</div>
+        <div id="container"></div>
+    </div>
     <script src="../MovieApp/script/main.js" type="module"></script>
     <script src="https://kit.fontawesome.com/f7df625e6a.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
