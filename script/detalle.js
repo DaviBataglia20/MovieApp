@@ -34,7 +34,7 @@ peli.then(data => data.json())
                             <div class = "descripcion"><p>${response.Plot}</p></div>
                             <div class = "otrasCosas"><p>${response.Released}</p></div>
                             <button class = "añadir">añadir a favoritos</button>`
-        document.body.append(film)
+        document.querySelector(".aquiVaLaPeli").append(film)
 
         const boton = document.querySelector(".añadir")
         const docRef = doc(db, "favoritos", "user1");
@@ -42,6 +42,10 @@ peli.then(data => data.json())
         const array = docSnap.data().array || []
 
         console.log(response);
+        if (!array.find(e => e.imdbID == response.imdbID)) {
+        } else {
+            boton.innerHTML="ya esta añadida"
+        }
 
         boton.addEventListener("click", async () => {
             if (!array.find(e => e.imdbID == response.imdbID)) {
@@ -50,15 +54,16 @@ peli.then(data => data.json())
                 await setDoc(doc(db, "favoritos", "user1"), { array });
 
                 //  localStorage.setItem("favoritos", JSON.stringify(array))
-                const contador = document.querySelector(".contador>p")
+                const contador = document.querySelector(".iconoFavo>a>p")
                 contador.innerText = array.length
+                location.reload()
 
             } else {
-                alert(" ESTO YA LO TENES EL EN EL CARRITO ")
+                boton.innerHTML="ya esta añadida"
             }
 
         })
-        const contador = document.querySelector(".contador>p")
+        const contador = document.querySelector(".iconoFavo>a>p")
         contador.innerText = array.length
 
 

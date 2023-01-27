@@ -36,7 +36,7 @@
     const divPai = document.querySelector(".container")
     divPai.append(divPeli)
 })
-const contador = document.querySelector(".contador>p")
+const contador = document.querySelector(".iconoFavo>a>p")
 contador.innerText = array.length
 
 document.querySelectorAll('.btn-delete').forEach((botonDelete)=> {

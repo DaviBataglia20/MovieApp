@@ -40,7 +40,7 @@ function type() {
 }
 type();
 /* ANIMACION DEL PLACEHOLDER */
-setInterval(function () {document.querySelector(".loading-page").style.position = "relative"}, 3900);
+setInterval(function () {document.querySelector(".loading-page").style.position = "relative"}, 3600);
 const LaFuncion = (e) => {
     e.preventDefault();
     document.querySelector('#container').innerHTML = ``
@@ -54,11 +54,12 @@ const LaFuncion = (e) => {
                 response.Search.forEach(peli => {
                     const peliInfo = document.createElement("div")
                     peliInfo.classList.add("cajaPelicula");
-                    peliInfo.innerHTML = `<div class="coverPeli"><img src="${peli.Poster}" alt=""class = " imagen">
-                   </div>
-                   <div class ="descripcionPeli"><p>año de lanzamiento : ${peli.Year}</p><p>es una ${peli.Type}</p><a href="../MovieApp/pages/movies.html?title=${peli.imdbID}"><button>Ver Mas</button></a></div>
-                   <div class = "nombrePeli"><p>${peli.Title}</p>
-                   <a href="  ">ver trailer</a>
+                    peliInfo.innerHTML = `
+                    <div class="coverPeli"><img src="${peli.Poster}" alt=""class = " imagen">
+                    </div>
+                    <div class = "nombrePeli"><p>${peli.Title}</p>
+                    <div class ="descripcionPeli"><p>año de lanzamiento:${peli.Year}</p>
+                    <a href="../MovieApp/pages/movies.html?title=${peli.imdbID}"><button>Leer Sinopsis</button></a></div>
                    </div>`
                     document.querySelector('#container').append(peliInfo)
                 });
