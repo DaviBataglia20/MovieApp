@@ -4,6 +4,10 @@
     padding: 0;
     font-family: 'Lalezar', cursive;
 }
+p{
+    padding-left: 10px;
+    color: white;
+}
 body{
     background: linear-gradient(to right,#020024,#090979,#00d4ff);
 }
@@ -162,11 +166,12 @@ input::placeholder{
     grid-row: 3/4;
 }
 .añadir{
+    cursor: pointer;
     align-self: center;
     margin: 0 auto;
     padding: 3px;
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: 20%;
     grid-column: 2/2;
     grid-row: 3/4;
 }

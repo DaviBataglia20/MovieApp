@@ -93,6 +93,7 @@ input::placeholder{
 .iconoFavo{
     display: flex;
     align-items: center;
+    padding-right: 10px;
     transition: all 0.5s;
 }
 .iconoFavo:hover{
@@ -117,6 +118,7 @@ input::placeholder{
     grid-row: 2/2;
     overflow: hidden;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 .galeria .deslizador{
     height: 100%;
@@ -149,6 +151,22 @@ input::placeholder{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
+}
+#container>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#container>div>i{
+    color: white;
+    font-size: 50px;
+}
+#container>div>p{
+    color: white;
+    font-size: 30px;
+    font-family: 'Lalezar', cursive;
+    text-align: center;
 }
 .cajaPelicula{
     animation:puff-in-right .5s cubic-bezier(.47,0.000,.745,.715) both;
@@ -234,6 +252,13 @@ input::placeholder{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.mainLogo>a{
+    text-decoration:none;
+    font-family: 'Lalezar', cursive;
+    color: white;
+    font-size: 27px;
+    letter-spacing: 2px;
 }
 .elNombreLogo{
     font-family: 'Lalezar', cursive;

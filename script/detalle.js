@@ -32,7 +32,7 @@ peli.then(data => data.json())
         film.innerHTML = `<div class= "imagen"><img src="${response.Poster}" alt=""></div>
                             <div class = "titulo"><p>${response.Title}</p></div>
                             <div class = "descripcion"><p>${response.Plot}</p></div>
-                            <div class = "otrasCosas"><p>${response.Released}</p></div>
+                            <div class = "otrasCosas"><p>Fecha de lanzamieto: ${response.Released}</p></div>
                             <button class = "añadir">añadir a favoritos</button>`
         document.querySelector(".aquiVaLaPeli").append(film)
 
